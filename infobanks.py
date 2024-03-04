@@ -957,7 +957,6 @@ def init():
             info('{}-{}'.format(year,sector))
             #if not year==2015: continue
             print(year)
-            if sector=='asuransi jiwa':continue
             if sector=='asuransi jiwa':
                 read_all_data_asuransi_jiwa(file,year)
             else:

@@ -10,8 +10,6 @@ def getKinerja(dbname,tablename):
     con.close()
     return df
 
-
-
 if __name__=="__main__":
     db_name='KINERJA.db'
     tbl_name = 'ASURANSI_JIWA'
