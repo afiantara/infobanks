@@ -31,7 +31,6 @@ def dump_to_db(db_name,table_name,df,report_date):
             query="DELETE FROM {} WHERE REPORT_DATE='{}'".format(table_name,report_date)
             print(query)
             r_set=conn.exec_driver_sql(query)
-            conn.commit()
     except SQLAlchemyError as e:
         error = str(e)
         print(error)
@@ -315,14 +314,15 @@ def read_all_data_asuransi_umum(filename,year):
         df=insert_col_range(df,175,205)
     elif year==2016:
         df=read(filename,12,1,95)
-        locs=[14,23,26,98,135,150]
+        locs=[14,23,26,98,135,150,162,163,164]
         df=insert_col(df,locs)
-        df=insert_col_range(df,172,205)
+        print(df)
+        df=insert_col_range(df,175,205)
     elif year==2015:
         df=read(filename,12,1,96)
-        locs=[14,23,26,98,135,150,171]
+        locs=[14,23,26,98,135,150,162,163,164,171]
         df=insert_col(df,locs)
-        df=insert_col_range(df,172,205)
+        df=insert_col_range(df,175,205)
         
     columns=[
         #'REPORT_DATE',
@@ -606,16 +606,16 @@ def read_all_data_asuransi_jiwa(filename,year):
         df=read(filename,16,1,77)
         locs=[69]
         df=drop_col(df,locs)
-        locs=[14]
+        locs=[14,149]
         df=insert_col(df,locs)
-        df=insert_col_range(df,171,201)
+        df=insert_col_range(df,172,201)
     elif year==2017:
         df=read(filename,15,1,77)
         locs=[69]
         df=drop_col(df,locs)
-        locs=[14]
+        locs=[14,149]
         df=insert_col(df,locs)
-        df=insert_col_range(df,171,201)
+        df=insert_col_range(df,172,201)
     elif year==2016:
         df=read(filename,14,1,73)
         #drop column no 72

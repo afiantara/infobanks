@@ -95,7 +95,7 @@ def dataProcessing(df,account,sector,isJiwa=True):
     df_account = pd.DataFrame()
     
     for idx,df_data in enumerate(df_datas):
-        if isJiwa: # means konvensional
+        if isJiwa: 
             produk  = products_aj[idx]
         else:
             produk  = products_au[idx]
